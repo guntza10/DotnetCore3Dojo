@@ -16,3 +16,35 @@
 >`4.` appsettings.json -> เป็นส่วนที่เอาไว้เพิ่ม additional config หรือ connetion string
 >
 >![appsetting](images\appSetting.png)
+
+## REST & RESTFUL API
+> `REST (Representational State Transfer)` -> เป็นรูปแบบของ software architecture ที่ใช้ web protocol(HTTP) ในการสร้าง web service
+
+>`RESTFUL API (RESTFUL)` -> Web Service ที่ใช้ REST ในการสร้าง(ใช้ HTTP GET,POST,PUT,DELETE ในการ request และ response กลับมาในรูปแบบของ JSON หรือ XML ระหว่าง client กับ server)
+
+## Controller
+
+> ![controller](images\controllerCs.png)
+> `1.` Route กับ ApiController เป็น decoration ที่เอาไว้บอกคุณสมบัติของ class โดย
+> * `Route` -> เอาไว้กำหนด endpoint url ที่จะใช้ call เข้ามาเมื่อต้องการใช้ controller
+> * `Apicontroller` -> เอาไว้บอกว่า class นี้เป็น controller ที่จัดการเกี่ยวกับ api
+>
+> `2.` HttpGet , HttpPost , HttpPut , HttpDelete เป็น decoration ที่บอกว่า method นี้เป็น Http request แบบไหน เพื่อให้เข้าใจว่ามันใช้งานแบบไหน
+> * `HttpGet` -> ใช้ request เพื่อ get data
+> * `HttpPost` -> ใช้ request เพื่อส่ง data ไปให้ server
+> * `HttpPut` -> ใช้ request เพื่อต้องการจะแก้ไขเปลี่ยนแปลง data
+> * `HttpDelete` -> ใช้ request เพื่อต้องการจะลบ data
+>
+>`**Note : ` สามารถส่ง Parameter ได้ 2 แบบ
+> * `route parameter` ->  ถ้าต้องการส่งแบบนี้ จะต้องมีการกำหนด parameter ให้กับ decoration Http ด้วย เช่น `[HttpGet("{id}")]` \
+> ลักษณะของ endpoint => host/getId/`id`
+> * `query string` -> ถ้าจะส่งแบบนี้ ไม่ต้องกำหนด parameter ให้กับ decoration Http \
+> ลักษณะของ endpoint => host/getId/`?id=123`
+>
+> `3.` HttpPost => ส่ง data ผ่าน Http request พร้อม request body จะต้องส่งผ่าน attribute `[FromBody]` ซึง server จะ get value จาก request body ที่ส่งเข้ามาผ่าน attribute `[FromBody]`
+
+## Dependency Injection Service
+> สามารถ register service ได้ 3 วิธี (register ใน method `ConfigureServices` ใน `Startup.cs`)
+> * `AddSingleton` -> ทุกๆ request จะต้อง get object เดิม
+> * `AddScoped` -> ทุกๆ client request จะต้องสร้าง object ใหม่
+> * `Transient` -> จะต้องสร้าง instance ใหม่ตลอดเวลาเมื่อถูก request
