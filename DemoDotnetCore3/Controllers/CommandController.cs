@@ -11,32 +11,31 @@ namespace DemoDotnetCore3.Controllers
     [ApiController]
     public class CommandController : ControllerBase
     {
-        private readonly ICommanderRepo _repository;
+        private readonly ICommanderService _commanderService;
 
-        public CommandController(ICommanderRepo repository)
+        public CommandController(ICommanderService commanderService)
         {
-            _repository = repository;
+            _commanderService = commanderService;
         }
 
         [HttpGet]
         public ActionResult<List<Command>> GetAllCommand()
         {
-            var allCommand = _repository.GetAllCommand();
-            return allCommand;
+            var allCommand = _commanderService.GetAllCommand();
+            return Ok(allCommand);
         }
 
         [HttpGet("{id}")]
         public ActionResult<Command> GetCommandById(string id)
         {
-
-            var command = _repository.GetCommandById(id);
-            return command;
+            var command = _commanderService.GetCommandById(id);
+            return Ok(command);
         }
 
         [HttpPost]
         public void AddCommand([FromBody] Command commandData)
         {
-            _repository.AddCommand(commandData);
+            _commanderService.AddCommand(commandData);
         }
     }
 }

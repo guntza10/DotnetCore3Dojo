@@ -3,7 +3,7 @@ using DemoDotnetCore3.Models;
 
 namespace DemoDotnetCore3.Data
 {
-    public interface ICommanderRepo
+    public interface ICommanderService
     {
         List<Command> GetAllCommand();
         Command GetCommandById(string id);
