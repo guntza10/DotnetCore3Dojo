@@ -52,32 +52,32 @@
 ## Step Config service and use in controller
 > `1.` สร้าง interface และ class ของ Database config
 >
-> ![IDbConfig](/images/IDbconfig.png)
-> ![DbConfig](/images/Dbconfig.png)
+> ![IDbConfig](images/IDbconfig.png)
+> ![DbConfig](images/Dbconfig.png)
 >
 > `2.` เพิ่ม config ของ DbConfig เข้าไปใน appsetting.json
 >
-> ![appSettingDbConfig](/images/appsettingForDbConfig.png)
+> ![appSettingDbConfig](images/appsettingForDbConfig.png)
 >
 > `3.` register DbConfig ใน Startup.cs
 >
-> ![registerDbConfig](/images/registerDbConfig.png)
+> ![registerDbConfig](images/registerDbConfig.png)
 >
 > `4.` สร้าง interface และ class ของ service 
 >
-> ![IService](/images/IService.png)
-> ![Service](/images/Service.png)
+> ![IService](images/IService.png)
+> ![Service](images/Service.png)
 > 
 > `5.` dependency injection dbConfig ให้กับ service เพื่อดึง dbConfig ที่ตั้งค่าไว้มาใช้
 >
-> ![useDbConfig](/images/useDbConfig.png)
+> ![useDbConfig](images/useDbConfig.png)
 >
 > `6.` register interface และ class ของ service ที่ Startup.cs
 >
->![registerService](/images/registerService.png)
+>![registerService](images/registerService.png)
 >
 > `7.` dependency injection service ไปใช้ที่ controller
 >
-> ![useServiceInController](/images/useServiceInController.png)
+> ![useServiceInController](images/useServiceInController.png)
 >
 > `หมายเหตุ:` การ register Dbconfig และ service ไปที่ ConfigureServices ใน Startup.cs เพื่อให้ทั้ง app รู้จักและสามารถเรียกใช้ได้
