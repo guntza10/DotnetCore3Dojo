@@ -3,19 +3,19 @@
 ## Architecture
 > `1.` Program.cs -> เป็น entry point ของ dotnet application เมื่อ run dotnet application มันจะเข้ามาที่นี่เป็นที่แรก ทำงานใน method main เรียกใช้ CreateHostBuilder -> Stratup.cs
 >
->![program](images\ProgramCs.PNG)
+>![program](images/ProgramCs.PNG)
 
 >`2.` Startup.cs -> เป็นส่วน core ศูนย์กลางในการทำงานของ dotnet application เอาไว้สำหรับ set config ต่างๆเกี่ยวกับการเชื่อมต่อพวก service , Http request
 >
->![startUp](images\StartupCs.PNG)
+>![startUp](images/StartupCs.PNG)
 
 >`3.` .csproj -> เป็นส่วนที่เอาไว้บอกว่า project เรามีการใช้ package , nuget , library ตัวไหนบ้าง รวมถึงบอก version ของ dotnet core 
 >
->![csProj](images\csProj.PNG)
+>![csProj](images/csProj.PNG)
 
 >`4.` appsettings.json -> เป็นส่วนที่เอาไว้เพิ่ม additional config หรือ connetion string
 >
->![appsetting](images\appSetting.PNG)
+>![appsetting](images/appSetting.PNG)
 
 ## REST & RESTFUL API
 > `REST (Representational State Transfer)` -> เป็นรูปแบบของ software architecture ที่ใช้ web protocol(HTTP) ในการสร้าง web service
@@ -24,7 +24,7 @@
 
 ## Controller
 
-> ![controller](images\controllerCs.PNG)
+> ![controller](images/controllerCs.PNG)
 > `1.` Route กับ ApiController เป็น decoration ที่เอาไว้บอกคุณสมบัติของ class โดย
 > * `Route` -> เอาไว้กำหนด endpoint url ที่จะใช้ call เข้ามาเมื่อต้องการใช้ controller
 > * `Apicontroller` -> เอาไว้บอกว่า class นี้เป็น controller ที่จัดการเกี่ยวกับ api
