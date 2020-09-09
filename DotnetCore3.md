@@ -3,19 +3,19 @@
 ## Architecture
 > `1.` Program.cs -> เป็น entry point ของ dotnet application เมื่อ run dotnet application มันจะเข้ามาที่นี่เป็นที่แรก ทำงานใน method main เรียกใช้ CreateHostBuilder -> Stratup.cs
 >
->![program](images\ProgramCs.png)
+>![program](images\ProgramCs.PNG)
 
 >`2.` Startup.cs -> เป็นส่วน core ศูนย์กลางในการทำงานของ dotnet application เอาไว้สำหรับ set config ต่างๆเกี่ยวกับการเชื่อมต่อพวก service , Http request
 >
->![startUp](images\StartupCs.png)
+>![startUp](images\StartupCs.PNG)
 
 >`3.` .csproj -> เป็นส่วนที่เอาไว้บอกว่า project เรามีการใช้ package , nuget , library ตัวไหนบ้าง รวมถึงบอก version ของ dotnet core 
 >
->![csProj](images\csProj.png)
+>![csProj](images\csProj.PNG)
 
 >`4.` appsettings.json -> เป็นส่วนที่เอาไว้เพิ่ม additional config หรือ connetion string
 >
->![appsetting](images\appSetting.png)
+>![appsetting](images\appSetting.PNG)
 
 ## REST & RESTFUL API
 > `REST (Representational State Transfer)` -> เป็นรูปแบบของ software architecture ที่ใช้ web protocol(HTTP) ในการสร้าง web service
@@ -24,7 +24,7 @@
 
 ## Controller
 
-> ![controller](images\controllerCs.png)
+> ![controller](images\controllerCs.PNG)
 > `1.` Route กับ ApiController เป็น decoration ที่เอาไว้บอกคุณสมบัติของ class โดย
 > * `Route` -> เอาไว้กำหนด endpoint url ที่จะใช้ call เข้ามาเมื่อต้องการใช้ controller
 > * `Apicontroller` -> เอาไว้บอกว่า class นี้เป็น controller ที่จัดการเกี่ยวกับ api
@@ -52,32 +52,32 @@
 ## Step Config service and use in controller
 > `1.` สร้าง interface และ class ของ Database config
 >
-> ![IDbConfig](images/IDbconfig.png)
-> ![DbConfig](images/Dbconfig.png)
+> ![IDbConfig](images/IDbconfig.PNG)
+> ![DbConfig](images/Dbconfig.PNG)
 >
 > `2.` เพิ่ม config ของ DbConfig เข้าไปใน appsetting.json
 >
-> ![appSettingDbConfig](images/appsettingForDbConfig.png)
+> ![appSettingDbConfig](images/appsettingForDbConfig.PNG)
 >
 > `3.` register DbConfig ใน Startup.cs
 >
-> ![registerDbConfig](images/registerDbConfig.png)
+> ![registerDbConfig](images/registerDbConfig.PNG)
 >
 > `4.` สร้าง interface และ class ของ service 
 >
-> ![IService](images/IService.png)
-> ![Service](images/Service.png)
+> ![IService](images/IService.PNG)
+> ![Service](images/Service.PNG)
 > 
 > `5.` dependency injection dbConfig ให้กับ service เพื่อดึง dbConfig ที่ตั้งค่าไว้มาใช้
 >
-> ![useDbConfig](images/useDbConfig.png)
+> ![useDbConfig](images/useDbConfig.PNG)
 >
 > `6.` register interface และ class ของ service ที่ Startup.cs
 >
->![registerService](images/registerService.png)
+>![registerService](images/registerService.PNG)
 >
 > `7.` dependency injection service ไปใช้ที่ controller
 >
-> ![useServiceInController](images/useServiceInController.png)
+> ![useServiceInController](images/useServiceInController.PNG)
 >
 > `หมายเหตุ:` การ register Dbconfig และ service ไปที่ ConfigureServices ใน Startup.cs เพื่อให้ทั้ง app รู้จักและสามารถเรียกใช้ได้
