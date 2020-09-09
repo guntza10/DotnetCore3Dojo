@@ -3,7 +3,7 @@
 ## Architecture
 > `1.` Program.cs -> เป็น entry point ของ dotnet application เมื่อ run dotnet application มันจะเข้ามาที่นี่เป็นที่แรก ทำงานใน method main เรียกใช้ CreateHostBuilder -> Stratup.cs
 >
->![program](images\ProgramCs.PNG)
+>![program2](images\ProgramCs.PNG)
 
 >`2.` Startup.cs -> เป็นส่วน core ศูนย์กลางในการทำงานของ dotnet application เอาไว้สำหรับ set config ต่างๆเกี่ยวกับการเชื่อมต่อพวก service , Http request
 >
